@@ -1,0 +1,13 @@
+<h1> <%= @task.title %> </h1>
+<p>Détails : <%= @task.details %> </p>
+<p>Completed ? : <%= @task.completed %> </p>
+
+<% if @task.completed %>
+<i class="fa-solid fa-square-check"></i>
+<% else %>
+<i class="fa-light fa-square"></i>
+<% end %>
+
+<%= link_to "🗑️ Delete" ,  task_path(@task), data: { turbo_method: 'delete', turbo_confirm: 'Are you sure?' }  %>
+
+<p> <%= link_to "📝 Go to Tasks" , tasks_path %> </p>

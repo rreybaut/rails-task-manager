@@ -1,0 +1,9 @@
+<h1> All tasks </h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li> <%= link_to task.title, task_path(task) %> <br> <%=link_to '✍️ Edit this task', task_edit_path(task)%></li>
+  <%end %>
+</ul>
+
+<a> <%=link_to '💁 Add a task', tasks_new_path() %> <a>
